@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+    <form enctype="multipart/form-data" action="{{ path('readpdf') }}" method="post" id="pdfparser-demo-form" accept-charset="UTF-8">
+        <div class="main-container container">
+            <div class="row-fluid">
+            <fieldset class="collapsible form-wrapper collapse-processed" id="edit-form">
+                <br /><div class="content"><b>{{ message }}</b></div><br />
+                        <div class="help">
+                            Selecteer een bestand dat moet geparseerd worden met de PDF Parser test.<br/>
+                            Tekst wordt uit elke pagina gelezen en hieronder wordt weergegeven.
+                        </div>
+
+                        <div class="control-group form-type-file form-item-files-file form-item">
+                            <div class="controls">
+                                <p></p><input type="file" value="Select File" id="pdf-file" name="pdf-file" size="60" class="form-file" onclick="showUpload()">
+                            </div>
+                        </div>
+                    <button class="btn btn-primary form-submit hidden" id="import-submit"  value="Submit" type="submit">Import Pdf</button>
+            </fieldset>
+            </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

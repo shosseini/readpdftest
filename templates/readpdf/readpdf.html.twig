@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="main-container container">
+        <div class="control-group form-type-file form-item-files-file form-item">
+        <form method="post" action="{{ path('savepdf') }}">
+        <fieldset class="collapsible form-wrapper collapse-processed" id="edit-form">
+            <div class="form-group">
+                <label for="pdf-text"><b>U kunt deze tekst aanpassen en opnieuw als pdf bestand bewaren:</b></label>
+                <textarea class="form-control" name="pdftextarea" rows="10">{{ pdftext }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="pdf-filename"><b>Geef de pdf filenaam:</b></label>
+                <input type="text" class="form-control" name="new-pdf-filename" id="new-pdf-filename" value="{{ originFileName }}">
+            </div>
+            <br>
+            <button class="btn btn-primary form-submit" id="edit-submit" name="op" value="Submit" type="submit">Download als Pdf</button>
+        </fieldset>
+        </form>
+    </div>
+    </div>
+{% endblock %}
